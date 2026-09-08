@@ -1,0 +1,12 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      // Requires a JTAG probe. The ESP-IDF extension supplies the GDB binary,
+      // the OpenOCD connection and the ELF at launch time.
+      "type": "gdbtarget",
+      "request": "attach",
+      "name": "ESP-IDF: JTAG debug (OpenOCD)"
+    }
+  ]
+}

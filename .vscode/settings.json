@@ -1,0 +1,83 @@
+{
+  // --- ESP-IDF installation ---
+  // Extension v2.2.0 dropped idf.espIdfPath / idf.toolsPath. It reads the Installation
+  // Manager manifest, defaulting to ~/.espressif/tools/eim_idf.json, which is where this
+  // machine's v6.1 install is registered. idf.eimIdfJsonPath would override that, but it
+  // is application-scoped and cannot be set here.
+  "idf.currentSetup": "/home/kabir0st/.espressif/v6.1/esp-idf",
+  "idf.extensionActivationMode": "always",
+
+  // --- Project ---
+  "idf.buildPath": "${workspaceFolder}/build",
+  "idf.sdkconfigFilePath": "${workspaceFolder}/sdkconfig",
+  "idf.saveBeforeBuild": true,
+  "idf.enableStatusBar": true,
+  "idf.notificationMode": "All",
+
+  // Auto-add new source files to main/CMakeLists.txt
+  "idf.enableUpdateSrcsToCMakeListsFile": true,
+
+  // Required for main/idf_component.yml dependencies (off by default)
+  "idf.enableIdfComponentManager": true,
+
+  // --- Flash / monitor ---
+  "idf.flashType": "UART",
+  "idf.port": "detect",
+  "idf.flashBaudRate": "460800",
+  "idf.monitorBaudRate": "115200",
+
+  // --- JTAG debug (only used with a probe attached) ---
+  "idf.openOcdConfigs": [
+    "interface/ftdi/esp32_devkitj_v1.cfg",
+    "target/esp32.cfg"
+  ],
+
+  // --- IntelliSense ---
+  "C_Cpp.intelliSenseEngine": "default",
+  "C_Cpp.default.configurationProvider": "ms-vscode.cpptools",
+  "files.associations": {
+    "sdkconfig": "properties",
+    "sdkconfig.defaults": "properties",
+    "sdkconfig.old": "properties",
+    "*.cpp": "cpp",
+    "*.hpp": "cpp"
+  },
+
+  // --- Keep CMake Tools out of the way; ESP-IDF drives CMake itself ---
+  "cmake.configureOnOpen": false,
+  "cmake.configureOnEdit": false,
+  "cmake.automaticReconfigure": false,
+  "cmake.autoSelectActiveFolder": false,
+  "cmake.options.advanced": {
+    "build": {
+      "statusBarVisibility": "inherit",
+      "inheritDefault": "hidden"
+    },
+    "launch": {
+      "statusBarVisibility": "inherit",
+      "inheritDefault": "hidden"
+    },
+    "debug": {
+      "statusBarVisibility": "inherit",
+      "inheritDefault": "hidden"
+    }
+  },
+
+  // --- Editor ---
+  "files.exclude": {
+    "**/build": true,
+    "**/managed_components": false
+  },
+  "search.exclude": {
+    "**/build": true,
+    "**/managed_components": true
+  },
+  "[cpp]": {
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true
+  },
+  "[c]": {
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "configurations": [
+    {
+      "name": "ESP-IDF",
+      // The compile database is the real source of includes, defines and -std flags.
+      // It is regenerated on every build, so new components are picked up automatically.
+      "compileCommands": "${config:idf.buildPath}/compile_commands.json",
+      "compilerPath": "/home/kabir0st/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-g++",
+      "intelliSenseMode": "gcc-x64",
+      // cStandard / cppStandard are intentionally omitted: the project builds as
+      // gnu23 / gnu++26 and cpptools has no value for the latter. Let compile_commands win.
+      "includePath": [
+        "${workspaceFolder}/**",
+        "${workspaceFolder}/build/config",
+        "${workspaceFolder}/managed_components/**",
+        "/home/kabir0st/.espressif/v6.1/esp-idf/components/**"
+      ],
+      "browse": {
+        "path": [
+          "${workspaceFolder}"
+        ],
+        "limitSymbolsToIncludedHeaders": true
+      }
+    }
+  ],
+  "version": 4
+}

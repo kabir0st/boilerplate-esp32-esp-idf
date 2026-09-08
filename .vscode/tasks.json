@@ -1,0 +1,86 @@
+{
+  "version": "2.0.0",
+  // The shell here is zsh, but Espressif only ships .sh / .fish activation scripts,
+  // so every task is run through bash explicitly.
+  "options": {
+    "cwd": "${workspaceFolder}",
+    "shell": {
+      "executable": "/bin/bash",
+      "args": ["-c"]
+    }
+  },
+  "presentation": {
+    "echo": true,
+    "reveal": "always",
+    "panel": "shared",
+    "clear": true
+  },
+  "tasks": [
+    {
+      "label": "ESP-IDF: build",
+      "type": "shell",
+      "command": "source /home/kabir0st/.espressif/tools/activate_idf_v6.1.sh && idf.py build",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "ESP-IDF: flash",
+      "type": "shell",
+      "command": "source /home/kabir0st/.espressif/tools/activate_idf_v6.1.sh && idf.py flash",
+      "problemMatcher": []
+    },
+    {
+      "label": "ESP-IDF: monitor",
+      "type": "shell",
+      "command": "source /home/kabir0st/.espressif/tools/activate_idf_v6.1.sh && idf.py monitor",
+      "isBackground": true,
+      "presentation": {
+        "panel": "dedicated",
+        "clear": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "ESP-IDF: build, flash and monitor",
+      "type": "shell",
+      "command": "source /home/kabir0st/.espressif/tools/activate_idf_v6.1.sh && idf.py build flash monitor",
+      "isBackground": true,
+      "presentation": {
+        "panel": "dedicated",
+        "clear": false
+      },
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "ESP-IDF: menuconfig",
+      "type": "shell",
+      "command": "source /home/kabir0st/.espressif/tools/activate_idf_v6.1.sh && idf.py menuconfig",
+      "presentation": {
+        "panel": "dedicated",
+        "clear": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "ESP-IDF: set-target esp32",
+      "type": "shell",
+      "command": "source /home/kabir0st/.espressif/tools/activate_idf_v6.1.sh && idf.py set-target esp32",
+      "problemMatcher": []
+    },
+    {
+      "label": "ESP-IDF: size",
+      "type": "shell",
+      "command": "source /home/kabir0st/.espressif/tools/activate_idf_v6.1.sh && idf.py size",
+      "problemMatcher": []
+    },
+    {
+      "label": "ESP-IDF: fullclean",
+      "type": "shell",
+      "command": "source /home/kabir0st/.espressif/tools/activate_idf_v6.1.sh && idf.py fullclean",
+      "problemMatcher": []
+    }
+  ]
+}

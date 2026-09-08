@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "espressif.esp-idf-extension",
+    "ms-vscode.cpptools"
+  ],
+  // PlatformIO also claims ESP32 projects and its own IntelliSense provider,
+  // and the two fight over c_cpp_properties.json.
+  "unwantedRecommendations": [
+    "platformio.platformio-ide"
+  ]
+}

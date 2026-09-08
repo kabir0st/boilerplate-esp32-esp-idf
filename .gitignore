@@ -1,0 +1,19 @@
+# sdkconfig and .vscode/ are deliberately tracked. This project is a reference, so the
+# exact configuration and the editor setup are part of what is being shared. See the
+# README for the alternative: ignore sdkconfig and commit sdkconfig.defaults instead.
+
+# Build output
+build/
+
+# Backup written by menuconfig / set-target
+sdkconfig.old
+
+# Fetched by the IDF component manager
+managed_components/
+dependencies.lock
+
+# cpptools precompiled header cache
+.vscode/ipch/
+
+# Editor scratch
+*.swp
